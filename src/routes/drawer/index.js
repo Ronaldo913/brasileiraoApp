@@ -1,9 +1,6 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from '../../pages/home/index';
-import Teams from '../../pages/teams';
-import Rounds from '../../pages/rounds';
-import Table from '../../pages/table';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 import ContentDrawer from './contentDrawer';
@@ -37,27 +34,7 @@ export default function DrawerRoute() {
           return <Ionicons name='home' size={size} color={focused ? 'rgb(240, 240, 187)' : 'rgb(173, 173, 140)'}></Ionicons>
         }
       }} />
-      <Drawer.Screen name="Teams" component={Teams} options={{
-        headerStyle: headerStyle,
-        drawerLabel: "Times", headerTitle: () => titleFormat("Times"),
-        drawerIcon: ({ focused, size }) => {
-          return <Ionicons name='people' size={size} color={focused ? 'rgb(240, 240, 187)' : 'rgb(173, 173, 140)'}></Ionicons>
-        }
-      }} />
-      <Drawer.Screen name="Table" component={Table} options={{
-        headerStyle: headerStyle,
-        drawerLabel: "Tabela", headerTitle: () => titleFormat('Tabela'),
-        drawerIcon: ({ focused, size }) => {
-          return <Ionicons name='podium' size={size} color={focused ? 'rgb(240, 240, 187)' : 'rgb(173, 173, 140)'}></Ionicons>
-        }
-      }} />
-      <Drawer.Screen name="Rounds" initialParams={{current: false}} component={Rounds} options={{
-        headerStyle: headerStyle,
-        drawerLabel: "Rodadas", headerTitle: () => titleFormat('Rodadas'),
-        drawerIcon: ({ focused, size }) => {
-          return <Ionicons name='list' size={size} color={focused ? 'rgb(240, 240, 187)' : 'rgb(173, 173, 140)'}></Ionicons>
-        }
-      }} />
+     
     </Drawer.Navigator>
   );
 
